@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Preprocessing</title>
+  <style>
+    body {
+  background: #000; /* Solid black background */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: auto;
+    text-align: center;
+}
+
+
+    .header {
+      color: #ff7675;
+      margin: 1.5rem 0;
+      position: sticky;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1rem;
+      z-index: 10;
+    }
+
+    .tree {
+      display: inline-block;
+      padding: 2rem;
+      min-width: fit-content;
+    }
+
+    .tree ul {
+      position: relative;
+      padding: 1em 0;
+      white-space: nowrap;
+      list-style: none;
+      margin: 0;
+    }
+
+    .tree ul ul {
+      padding-top: 2em;
+    }
+
+    .tree li {
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+      list-style-type: none;
+      position: relative;
+      padding: 1em 0.5em 0 0.5em;
+      min-width: max-content;
+    }
+
+    /* Lines */
+    .tree li::before,
+    .tree li::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 50%;
+      border-top: 2px solid #444;
+      width: 50%;
+      height: 1em;
+    }
+
+    .tree li::after {
+      right: auto;
+      left: 50%;
+      border-left: 2px solid #444;
+    }
+
+    .tree li:only-child::after,
+    .tree li:only-child::before {
+      display: none;
+    }
+
+    .tree li:first-child::before,
+    .tree li:last-child::after {
+      border: 0 none;
+    }
+
+    .tree li:last-child::before {
+      border-right: 2px solid #444;
+    }
+
+    .tree ul ul::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      border-left: 2px solid #444;
+      width: 0;
+      height: 1em;
+    }
+
+    .tree button {
+      background-color: #333;
+      border: none;
+      padding: 1rem;
+      font-size: 0.9rem;
+      min-width: 10em;
+      max-width: 12em;
+      height: auto;
+      border-radius: 1rem;
+      color: white;
+      box-shadow: 0 0.4rem #1e1e1e;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+      margin: 0.5em 0;
+      white-space: normal;
+      word-wrap: break-word;
+      line-height: 1.2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tree button:active {
+      color: white;
+      box-shadow: 0 0.2rem #1e1e1e;
+      transform: translateY(0.2rem);
+    }
+
+    .tree button:hover:not(:disabled) {
+	box-shadow: 0 0.4rem rgba(255, 255, 255, 0.5);
+      background: white;
+      color: black;
+    }
+
+    .tree button:disabled {
+      cursor: auto;
+      color: grey;
+    }
+
+    /* Ensure each level takes full width needed */
+    .tree > ul {
+      display: inline-block;
+    }
+
+    .tree ul ul {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .tree li {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <div class="tree">
+	  <ul>
+	    <li>
+		   <button onclick="window.location.href='#'">Data</button>
+		   <ul>
+			<li>
+			   <button onclick="window.location.href='#'">Numeric</button>
+			   <ul>
+				<li>
+				  <button onclick="window.location.href='#'">Measured in numbers.</button>
+				</li>
+			  </ul>
+			</li>
+			<li>
+			   <button onclick="window.location.href='#'">Categorical</button>
+			   <ul>
+				<li>
+				  <button onclick="window.location.href='#'">One category out of a fixed number of possible categories.</button>
+				</li>
+			  </ul>
+			</li>	
+			<li>
+			   <button onclick="window.location.href='#'">Ordinal</button>
+			   <ul>
+				<li>
+				  <button onclick="window.location.href='#'">Categories in a specific order.</button>
+				</li>
+			  </ul>
+			</li>	
+		  </ul>
+		</li>		
+	  </ul>
+      <ul>
+        <li>
+          <button onclick="window.location.href='#'">Data Preprocessing</button>
+          <ul>
+			<li>
+              <button onclick="window.location.href='#'">Data Cleaning</button>
+			  <ul>
+				<li>
+				  <button onclick="window.location.href='#'">Fixing or Removing Incorrect, Duplicate, Corrupted, 
+				  Incorrectly formatted, Incomplete data in a dataset.</button>
+				  <ul>
+					<li>
+					  <button onclick="window.location.href='#'">Remove duplicates and irrelevant observations.</button>
+					</li>
+					<li>
+					  <button onclick="window.location.href='#'">Fixing structural errors.</button>
+					</li>
+					<li>
+					  <button onclick="window.location.href='#'">Filtering unwanted outliers.</button>
+					</li>
+					<li>
+					  <button onclick="window.location.href='#'">Handling missing data.</button>
+					</li>
+					<li>
+					  <button onclick="window.location.href='#'">Validation - does data make sense.</button>
+					</li>
+				  </ul>
+				</li>
+			  </ul>
+            </li>
+            <li>
+              <button onclick="window.location.href='#'">Data Integration</button>
+			  <ul>
+				<li>
+				  <button onclick="window.location.href='#'">Combining data from different sources into a unified format.</button>
+				</li>
+			  </ul>
+            </li>
+			<li>
+              <button onclick="window.location.href='#'">Data Transformation</button>
+			  <ul>
+				<li>
+				  <button onclick="window.location.href='#'">Convert data from one format or structure to another.</button>
+				  <ul>
+					<li>
+					  <button onclick="window.location.href='#'">Smoothing</button>
+					</li>
+					<li>
+					  <button onclick="window.location.href='#'">Aggregation</button>
+					</li>
+					<li>
+					  <button onclick="window.location.href='#'">Generalization</button>
+					</li>
+					<li>
+					  <button onclick="window.location.href='#'">Normalization</button>
+					</li>
+				  </ul>
+				</li>
+			  </ul>
+            </li>
+			<li>
+              <button onclick="window.location.href='#'">Data Reduction</button>
+			  <ul>
+				<li>
+				  <button onclick="window.location.href='#'">Used to obtain a reduced representation of the dataset that
+				  is much smaller in volume but maintains the integrity of the base data.</button>
+				  <ul>
+					<li>
+					  <button onclick="window.location.href='FeatureSelection.html'">Feature Selection.</button>
+					</li>
+					<li>
+					  <button onclick="window.location.href='#'">Feature Extraction.</button>
+					</li>
+				  </ul>
+				</li>
+			  </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>

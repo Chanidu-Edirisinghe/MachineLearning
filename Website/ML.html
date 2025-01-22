@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Learning and AI</title>
+  <style>
+    body {
+  background: #000; /* Solid black background */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: auto;
+    text-align: center;
+}
+
+    .header {
+      color: #ff7675;
+      margin: 1.5rem 0;
+      position: sticky;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1rem;
+      z-index: 10;
+    }
+
+    .tree {
+      display: inline-block;
+      padding: 2rem;
+      min-width: fit-content;
+    }
+
+    .tree ul {
+      position: relative;
+      padding: 1em 0;
+      white-space: nowrap;
+      list-style: none;
+      margin: 0;
+    }
+
+    .tree ul ul {
+      padding-top: 2em;
+    }
+
+    .tree li {
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+      list-style-type: none;
+      position: relative;
+      padding: 1em 0.5em 0 0.5em;
+      min-width: max-content;
+    }
+
+    /* Lines */
+    .tree li::before,
+    .tree li::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 50%;
+      border-top: 2px solid #444;
+      width: 50%;
+      height: 1em;
+    }
+
+    .tree li::after {
+      right: auto;
+      left: 50%;
+      border-left: 2px solid #444;
+    }
+
+    .tree li:only-child::after,
+    .tree li:only-child::before {
+      display: none;
+    }
+
+    .tree li:first-child::before,
+    .tree li:last-child::after {
+      border: 0 none;
+    }
+
+    .tree li:last-child::before {
+      border-right: 2px solid #444;
+    }
+
+    .tree ul ul::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      border-left: 2px solid #444;
+      width: 0;
+      height: 1em;
+    }
+
+    .tree button {
+      background-color: #333;
+      border: none;
+      padding: 1rem;
+      font-size: 0.9rem;
+      min-width: 10em;
+      max-width: 12em;
+      height: auto;
+      border-radius: 1rem;
+      color: white; /* Original button text color set to white */
+      box-shadow: 0 0.4rem #1e1e1e;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+      margin: 0.5em 0;
+      white-space: normal;
+      word-wrap: break-word;
+      line-height: 1.2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tree button:active {
+      color: white;
+      box-shadow: 0 0.2rem #1e1e1e;
+      transform: translateY(0.2rem);
+    }
+
+    .tree button:hover:not(:disabled) {
+	box-shadow: 0 0.4rem rgba(255, 255, 255, 0.5);
+      background: white; /* Button background changes to white on hover */
+      color: black; /* Button text color changes to black on hover */
+    }
+
+    .tree button:disabled {
+      cursor: auto;
+      color: grey;
+    }
+
+    /* Ensure each level takes full width needed */
+    .tree > ul {
+      display: inline-block;
+    }
+
+    .tree ul ul {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .tree li {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <div class="tree">
+      <ul>
+        <li>
+          <button onclick="window.location.href='#'">Machine Learning</button>
+          <ul>
+			<li>
+              <button onclick="window.location.href='DataPreprocessing.html'">Data Preprocessing</button>
+            </li>
+            <li>
+              <button onclick="window.location.href='#'">Supervised Learning</button>
+              <ul>
+                <li>
+                  <button onclick="window.location.href='#'">Classification</button>
+                </li>
+                <li>
+                  <button onclick="window.location.href='#'">Regression</button>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <button onclick="window.location.href='#'">Unsupervised Learning</button>
+              <ul>
+                <li>
+                  <button onclick="window.location.href='Clustering.html'">Clustering</button>
+                </li>
+                <li>
+                  <button onclick="window.location.href='#'">Association Mining</button>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <button onclick="window.location.href='#'">Semi-supervised Learning</button>
+            </li>
+            <li>
+              <button onclick="window.location.href='#'">Reinforcement Learning</button>
+            </li>
+            <li>
+              <button onclick="window.location.href='#'">Ensemble Learning</button>
+			  <ul>
+				<li>
+					<button onclick="window.location.href='#'">Homogeneous ensemble method</button>
+					<ul>
+						<li>
+						  <button onclick="window.location.href='#'">Bagging</button>
+						</li>
+						<li>
+						  <button onclick="window.location.href='#'">Boosting</button>
+						</li>
+					  </ul>
+				</li>
+				<li>
+					<button onclick="window.location.href='#'">Heterogeneous ensemble method</button>
+					<ul>
+						<li>
+						  <button onclick="window.location.href='#'">Stacking</button>
+						</li>
+					</ul>
+				</li>
+			  </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
